@@ -4,7 +4,7 @@ function updateTriangleGenerators() {
         document.getElementById("tri-gen-t1-lvl").innerHTML = `LVL ${playerData.trianglesGenerator.tier1.lvl.toFixed()}`
         document.getElementById("tri-gen-t1-produce").innerHTML = `Producing ${playerData.trianglesGenerator.tier1.lvl}/s`
         document.getElementById("tri-gen-t1-buy-btn-txt").innerHTML = `Cost: ${playerData.trianglesGenerator.tier1.cost.toFixed(3)}`
-        if (playerData.trianglesAmount.sub("100") >= 0) {
+        if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier1.cost) >= 0) {
             document.getElementById("tri-gen-t1-buy-btn").classList.add("btn-can-afford")
             document.getElementById("tri-gen-t1-buy-btn").classList.remove("btn-cant-afford")
         }
