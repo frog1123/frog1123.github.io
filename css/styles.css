@@ -1,5 +1,6 @@
 body {
   background-color: #262626;
+  margin: 0;
 }
 /* prettier-ignore */
 h1, h2, h3 {
@@ -63,4 +64,14 @@ h1, h2, h3 {
 }
 .btn-cant-afford:hover {
   background-color: #b84b5f;
+}
+.tab-btn {
+  width: 200px;
+  height: max-content;
+  background-color: #a0a0a0;
+  border: none;
+  border-radius: 10px;
+}
+.tab-btn:hover {
+  background-color: #878787;
 }

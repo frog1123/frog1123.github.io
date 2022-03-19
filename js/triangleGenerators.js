@@ -1,9 +1,9 @@
 function updateTriangleGenerators() {
     // tier1
     if (playerData.trianglesGenerator.tier1.hasUnlocked == true) {
-        document.getElementById("tri-gen-t1-lvl").innerHTML = `LVL ${playerData.trianglesGenerator.tier1.lvl.toFixed()}`
-        document.getElementById("tri-gen-t1-produce").innerHTML = `Producing ${playerData.trianglesGenerator.tier1.lvl}/s`
-        document.getElementById("tri-gen-t1-buy-btn-txt").innerHTML = `Cost: ${playerData.trianglesGenerator.tier1.cost.toFixed(3)}`
+        document.getElementById("tri-gen-t1-lvl").innerHTML = `LVL ${formatValueNoDecimal(playerData.trianglesGenerator.tier1.lvl)}`
+        document.getElementById("tri-gen-t1-produce").innerHTML = `Producing ${formatValue(playerData.trianglesGenerator.tier1.lvl)}/s`
+        document.getElementById("tri-gen-t1-buy-btn-txt").innerHTML = `Cost: ${formatValue(playerData.trianglesGenerator.tier1.cost)}`
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier1.cost) >= 0) {
             document.getElementById("tri-gen-t1-buy-btn").classList.add("btn-can-afford")
             document.getElementById("tri-gen-t1-buy-btn").classList.remove("btn-cant-afford")
@@ -23,9 +23,9 @@ function updateTriangleGenerators() {
         document.getElementById("t2-triangle-unlock").classList.remove("btn-can-afford")
     }
     if (playerData.trianglesGenerator.tier2.hasUnlocked == true) {
-        document.getElementById("tri-gen-t2-lvl").innerHTML = `LVL ${playerData.trianglesGenerator.tier2.lvl.toFixed()}`
-        document.getElementById("tri-gen-t2-produce").innerHTML = `Producing ${playerData.trianglesGenerator.tier2.lvl} T1 Generator/s`
-        document.getElementById("tri-gen-t2-buy-btn-txt").innerHTML = `Cost: ${playerData.trianglesGenerator.tier2.cost.toFixed(3)}`
+        document.getElementById("tri-gen-t2-lvl").innerHTML = `LVL ${playerData.trianglesGenerator.tier2.lvl}`
+        document.getElementById("tri-gen-t2-produce").innerHTML = `Producing ${formatValue(playerData.trianglesGenerator.tier2.lvl)} T1 Generator/s`
+        document.getElementById("tri-gen-t2-buy-btn-txt").innerHTML = `Cost: ${formatValue(playerData.trianglesGenerator.tier2.cost)}`
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier2.cost) >= 0) {
             document.getElementById("tri-gen-t2-buy-btn").classList.add("btn-can-afford")
             document.getElementById("tri-gen-t2-buy-btn").classList.remove("btn-cant-afford")
@@ -48,6 +48,7 @@ function unlockFirstTriangleGenerator() {
         document.getElementById("gain-txt").style.display = "block"
         document.getElementById("gen-list").style.display = "grid"
         document.getElementById("tri-gen-t1").style.display = "grid"
+        document.getElementById("tab-list").style.display = "block"
     }
 }
 function upgradeTriangleTier1Generator() {
