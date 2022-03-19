@@ -122,7 +122,7 @@ function unlockThirdTriangleGenerator() {
         document.getElementById("tri-gen-t3-container").style.padding = "0"
         document.getElementById("t3-triangle-unlock").style.display = "none"
         document.getElementById("tri-gen-t3").style.display = "grid"
-        document.getElementById("t3-line").style.display = "block"
+        document.getElementById("t2-line").style.display = "block"
     }
 }
 function upgradeTriangleTier3Generator() {

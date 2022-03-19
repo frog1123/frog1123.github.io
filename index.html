@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/mq.css">
     <script src="js/break_eternity.js"></script>
+    <script src="js/saveSystem.js"></script>
     <script src="js/format.js"></script>
     <script src="js/playerData.js"></script>
     <script src="js/switchTabs.js"></script>
@@ -15,6 +16,8 @@
     <title>Geometry Incremental</title>
 </head>
 <body>
+    <button style="width: 200px; height: 100px" onclick="saveData()">SAVE</button>
+    <button style="width: 200px; height: 100px" onclick="loadData()">LOAD</button>
     <center>
         <h1>You have <span id="triangles-amount-txt" style="font-size: 2em">x</span> Triangles</h1>
         <h2 id="gain-txt" style="display: none">Gaining <span id="triangle-gaining-txt" style="font-size: 2em">x</span> Triangles/sec</h2>
@@ -58,4 +61,4 @@
         </div>
     </center>
 </body>
-</html>
+</html> 
