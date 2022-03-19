@@ -42,6 +42,9 @@ h1, h2, h3 {
 .gen-name {
   justify-self: left;
 }
+.gen-level {
+  justify-self: left;
+}
 .gen-produce {
   justify-self: right;
 }

@@ -9,7 +9,7 @@ function formatValue(value) {
         return value.m.toFixed(3)
     }
     if (value.layer === 0) {
-        if (value.mag < 1e5 && value.mag > 1e-4 || value.mag === 0) {
+        if (value.mag < 1e4 && value.mag > 1e-4 || value.mag === 0) {
             return (value.sign * value.mag).toFixed(3)
         }
         return value.m.toFixed(3) + "e" + value.e.toLocaleString();
@@ -32,7 +32,7 @@ function formatValueNoDecimal(value) {
         return value.m
     }
     if (value.layer === 0) {
-        if (value.mag < 1e5 && value.mag > 1e-4 || value.mag === 0) {
+        if (value.mag < 1e4 && value.mag > 1e-4 || value.mag === 0) {
             return (value.sign * value.mag)
         }
         return value.m.toFixed(3) + "e" + value.e.toLocaleString();

@@ -35,6 +35,28 @@ function updateTriangleGenerators() {
             document.getElementById("tri-gen-t2-buy-btn").classList.remove("btn-can-afford")
         }
     }
+    // tier 3
+    if (playerData.trianglesGenerator.tier3.hasUnlocked == false && playerData.trianglesAmount.sub("1e4") >= 0) {
+        document.getElementById("t3-triangle-unlock").classList.add("btn-can-afford")
+        document.getElementById("t3-triangle-unlock").classList.remove("btn-cant-afford")
+    }
+    else {
+        document.getElementById("t3-triangle-unlock").classList.add("btn-cant-afford")
+        document.getElementById("t3-triangle-unlock").classList.remove("btn-can-afford")
+    }
+    if (playerData.trianglesGenerator.tier3.hasUnlocked == true) {
+        document.getElementById("tri-gen-t3-lvl").innerHTML = `LVL ${playerData.trianglesGenerator.tier3.lvl}`
+        document.getElementById("tri-gen-t3-produce").innerHTML = `Producing ${formatValue(playerData.trianglesGenerator.tier3.lvl)} T2 Generator/s`
+        document.getElementById("tri-gen-t3-buy-btn-txt").innerHTML = `Cost: ${formatValue(playerData.trianglesGenerator.tier3.cost)}`
+        if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost) >= 0) {
+            document.getElementById("tri-gen-t3-buy-btn").classList.add("btn-can-afford")
+            document.getElementById("tri-gen-t3-buy-btn").classList.remove("btn-cant-afford")
+        }
+        else {
+            document.getElementById("tri-gen-t3-buy-btn").classList.add("btn-cant-afford")
+            document.getElementById("tri-gen-t3-buy-btn").classList.remove("btn-can-afford")
+        }
+    }
 }
 function incrementTrianglesAmount() {
     playerData.trianglesAmount = playerData.trianglesAmount.add(playerData.trianglesGenerator.tier1.lvl.div("10"))
@@ -82,5 +104,31 @@ function upgradeTriangleTier2Generator() {
         playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier2.cost)
         playerData.trianglesGenerator.tier2.lvl = playerData.trianglesGenerator.tier2.lvl.add("1")
         playerData.trianglesGenerator.tier2.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier2.cost, playerData.trianglesGenerator.tier2.costIncrease))
+    }
+}
+function showThirdUnlockButton() {
+    if (playerData.trianglesGenerator.tier2.hasUnlocked == true && playerData.trianglesGenerator.tier3.hasUnlocked == false && playerData.trianglesAmount.sub("1e4") >= 0) {
+        document.getElementById("tri-gen-t3-container").style.display = "block"
+        document.getElementById("t3-triangle-unlock").style.display = "block"
+        document.getElementById("tri-gen-t3-container").style.padding = "20px"
+        document.getElementById("t2-line").style.display = "block"
+    }
+}
+function unlockThirdTriangleGenerator() {
+    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost) >= 0) {
+        playerData.trianglesGenerator.tier3.hasUnlocked = true
+        playerData.trianglesAmount = playerData.trianglesAmount.sub("1e4")
+        playerData.trianglesGenerator.tier3.lvl = new Decimal("1")
+        document.getElementById("tri-gen-t3-container").style.padding = "0"
+        document.getElementById("t3-triangle-unlock").style.display = "none"
+        document.getElementById("tri-gen-t3").style.display = "grid"
+        document.getElementById("t3-line").style.display = "block"
+    }
+}
+function upgradeTriangleTier3Generator() {
+    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost) >= 0) {
+        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost)
+        playerData.trianglesGenerator.tier3.lvl = playerData.trianglesGenerator.tier3.lvl.add("1")
+        playerData.trianglesGenerator.tier3.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier3.cost, playerData.trianglesGenerator.tier3.costIncrease))
     }
 }
