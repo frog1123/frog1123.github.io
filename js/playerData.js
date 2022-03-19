@@ -5,13 +5,13 @@ var playerData = {
             hasUnlocked: false,
             cost: new Decimal("20"),
             costIncrease: new Decimal("1.05"),
-            lvl: 0,
+            lvl: new Decimal("0"),
         },
         tier2: {
             hasUnlocked: false,
             cost: new Decimal("100"),
             costIncrease: new Decimal("1.07"),
-            lvl: 0,
+            lvl: new Decimal("0"),
         }
     }
 }

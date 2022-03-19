@@ -13,8 +13,8 @@ function produceGenerators() {
     incrementTier1TrianglesGenerator()
 }
 function updateTrianglesAmountText() {
-    document.getElementById("triangles-amount-txt").innerHTML = playerData.trianglesAmount
-    document.getElementById("triangle-gaining-txt").innerHTML = trianglesPerSec()
+    document.getElementById("triangles-amount-txt").innerHTML = formatValue(playerData.trianglesAmount)
+    document.getElementById("triangle-gaining-txt").innerHTML = formatValue(trianglesPerSec())
 }
 function trianglesPerSec() {
     return playerData.trianglesGenerator.tier1.lvl

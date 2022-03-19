@@ -43,8 +43,9 @@ function unlockFirstTriangleGenerator() {
     if (playerData.trianglesAmount.sub("10") >= 0) {
         playerData.trianglesGenerator.tier1.hasUnlocked = true
         playerData.trianglesAmount = playerData.trianglesAmount.sub("10")
-        playerData.trianglesGenerator.tier1.lvl = new Decimal("1")
+        playerData.trianglesGenerator.tier1.lvl = playerData.trianglesGenerator.tier1.lvl.add("1")
         document.getElementById("t1-triangle-unlock").style.display = "none"
+        document.getElementById("gain-txt").style.display = "block"
         document.getElementById("gen-list").style.display = "grid"
         document.getElementById("tri-gen-t1").style.display = "grid"
     }

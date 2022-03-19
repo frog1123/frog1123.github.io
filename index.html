@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/break_eternity.js"></script>
+    <script src="js/format.js"></script>
     <script src="js/playerData.js"></script>
     <script src="js/triangleGenerators.js"></script>
     <script src="js/index.js"></script>
@@ -14,7 +15,7 @@
 <body>
     <center>
         <h1>You have <span id="triangles-amount-txt" style="font-size: 2em">x</span> Triangles</h1>
-        <h2>Gaining <span id="triangle-gaining-txt" style="font-size: 2em">x</span> Triangles/sec</h2>
+        <h2 id="gain-txt" style="display: none">Gaining <span id="triangle-gaining-txt" style="font-size: 2em">x</span> Triangles/sec</h2>
         <button class="unlock-btn btn-can-afford" id="t1-triangle-unlock" onclick="unlockFirstTriangleGenerator()"><h3 style="font-size: 1.5em">Tier 1 Triangle Generator<br/>Cost: 10 Triangles</h3></button>
         <div id="gen-list">
             <div id="tri-gen-t1-container">
