@@ -1,18 +1,20 @@
 setInterval(update, 100)
 function update() {
     updateTrianglesAmountText()
+    updateTriangleGenerators()
+    updateShopButtons()
     //
     incrementTrianglesAmount()
     //
-    updateTrianglesAmountText()
-    updateTriangleGenerators()
     showSecondUnlockButton()
     showThirdUnlockButton()
+    showShopUnlock()
 }
 setInterval(produceGenerators, 1000)
 function produceGenerators() {
     incrementTier1TrianglesGenerator()
     incrementTier2TrianglesGenerator()
+    incrementTier3TrianglesGenerator()
 }
 function updateTrianglesAmountText() {
     document.getElementById("triangles-amount-txt").innerHTML = formatValue(playerData.trianglesAmount)
@@ -26,4 +28,7 @@ function incrementTier1TrianglesGenerator() {
 }
 function incrementTier2TrianglesGenerator() {
     playerData.trianglesGenerator.tier2.lvl = playerData.trianglesGenerator.tier2.lvl.add(playerData.trianglesGenerator.tier3.lvl)
+}
+function incrementTier3TrianglesGenerator() {
+    playerData.trianglesGenerator.tier3.lvl = playerData.trianglesGenerator.tier3.lvl.add(playerData.trianglesGenerator.tier4.lvl)
 }

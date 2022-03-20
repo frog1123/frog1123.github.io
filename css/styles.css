@@ -20,10 +20,15 @@ h1, h2, h3 {
 }
 #gen-list {
   width: 97%;
+  max-height: 550px;
   display: none;
+  overflow: scroll;
   grid-template-rows: max-content max-content max-content;
   background-color: #67686b;
   border-radius: 20px;
+}
+#gen-list::-webkit-scrollbar {
+  display: none;
 }
 .line {
   width: 98%;
@@ -68,6 +73,11 @@ h1, h2, h3 {
 .btn-cant-afford:hover {
   background-color: #b84b5f;
 }
+#tab-container {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 10px;
+}
 .tab-btn {
   width: 200px;
   height: max-content;
@@ -77,4 +87,19 @@ h1, h2, h3 {
 }
 .tab-btn:hover {
   background-color: #878787;
+}
+.icon-1 {
+  width: 50px;
+  height: 50px;
+}
+.icon-2 {
+  width: 40px;
+  height: 40px;
+}
+.icon-3 {
+  width: 20px;
+  height: 20px;
+}
+.triangle-icon {
+  content: url("../assets/svg/triangle.svg");
 }
