@@ -33,7 +33,7 @@ function formatValueNoDecimal(value) {
     }
     if (value.layer === 0) {
         if (value.mag < 1e4 && value.mag > 1e-4 || value.mag === 0) {
-            return (value.sign * value.mag)
+            return (value.sign * value.mag).toFixed()
         }
         return value.m.toFixed(3) + "e" + value.e.toLocaleString();
     }

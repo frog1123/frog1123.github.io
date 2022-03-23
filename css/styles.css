@@ -38,9 +38,8 @@ h1, h2, h3 {
 }
 .generator {
   width: 98%;
-  height: max-content;
   display: grid;
-  grid-template-columns: 20% 10% 50% 20%;
+  grid-template-columns: 20% 30% auto 20%;
   align-items: center;
   padding: 5px;
 }
@@ -102,4 +101,44 @@ h1, h2, h3 {
 }
 .triangle-icon {
   content: url("../assets/svg/triangle.svg");
+}
+#shop-list {
+  width: 1000px;
+  max-height: 550px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  justify-items: center;
+  background-color: #67686b;
+  border-radius: 20px;
+}
+#shop-list::-webkit-scrollbar {
+  display: none;
+}
+.shop-item {
+  display: grid;
+  width: 90%;
+  grid-template-rows: 35% 45% 20%;
+  padding: 10px;
+}
+.shop-item img {
+  justify-self: center;
+  align-self: center;
+  width: 120px;
+  height: 120px;
+}
+.shop-item h1 {
+  align-self: bottom;
+}
+.shop-item-btn {
+  border-style: solid;
+  border-radius: 10px;
+  background-color: #a0a0a0;
+}
+.btn-already-bought {
+  border-color: #898989;
+  background-color: #333333;
+}
+.btn-already-bought:hover {
+  background-color: #212121;
 }

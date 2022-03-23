@@ -4,5 +4,5 @@ function switchToGenerators() {
 }
 function switchToShop() {
     document.getElementById("gen-list").style.display = "none"
-    document.getElementById("shop-list").style.display = "block"
+    document.getElementById("shop-list").style.display = "grid"
 }

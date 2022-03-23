@@ -17,11 +17,11 @@
     <title>Geometry Incremental</title>
 </head>
 <body>
-    <button style="width: 200px; height: 50px" onclick="saveData()">SAVE</button>
-    <button style="width: 200px; height: 50px" onclick="loadData()">LOAD</button>
+    <button style="width: 100px; height: 50px" onclick="saveData()">SAVE</button>
+    <button style="width: 100px; height: 50px" onclick="loadData()">LOAD</button>
     <center>
-        <h1>You have <span id="triangles-amount-txt" style="font-size: 2em">x</span><img class="triangle-icon icon-1"/></h1>
-        <h2 id="gain-txt" style="display: none">Gaining <span id="triangle-gaining-txt" style="font-size: 2em">x</span> <img class="triangle-icon icon-2"/>/sec</h2>
+        <h1><span id="triangles-amount-txt" style="font-size: 2em">x</span><img class="triangle-icon icon-1"/></h1>
+        <h2 id="gain-txt" style="display: none">Gaining <span id="triangle-gaining-txt" style="font-size: 2em">x</span><img class="triangle-icon icon-2"/>/s</h2>
         <button class="unlock-btn btn-can-afford" id="t1-triangle-unlock" onclick="unlockFirstTriangleGenerator()"><h2>Tier 1 Triangle Generator<br/>Cost: 10<img class="triangle-icon icon-3"/></h2></button>
         <div id="gen-list">
             <div id="tri-gen-t1-container">
@@ -62,11 +62,33 @@
                     <h2 class="gen-produce">Producing <span id="tri-gen-t4-produce">x</span> T3 Generators/s</h2>
                     <button class="gen-buy-btn" id="tri-gen-t4-buy-btn" onclick="upgradeTriangleTier4Generator()"><h2>Cost: <span id="tri-gen-t4-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
                 </div>
-                </div>
             </div>
         </div>
         <div id="shop-list" style="display: none">
-            <h1>Shop</h1>
+            <div class="shop-item" id="circle-item">
+                <img src="assets/svg/circle.svg"/>
+                <div>
+                    <h1>Circle</h1>
+                    <h2>Generators are more efficient</h2>
+                </div>
+                <button class="shop-item-btn" id="circle-buy-btn" onclick="buyCircle()"><h2 id="circle-buy-btn-txt">Cost: 1.000e6</h2></button>
+            </div>
+            <div class="shop-item" id="triangles-item">
+                <img src="assets/svg/triangle_2.svg"/>
+                <div>
+                    <h1>Triangles</h1>
+                    <h2>Gain a x2 production multipler every 10 generators bought</h2>
+                </div>
+                <button class="shop-item-btn" id="triangles-buy-btn" onclick="buyTriangles()"><h2 id="triangles-buy-btn-txt">Cost: 1.000e7</h2></button>
+            </div>
+            <div class="shop-item" id="square-item">
+                <img src="assets/svg/square.svg"/>
+                <div>
+                    <h1>Square</h1>
+                    <h2>Generator cost scaling uses a better formula</h2>
+                </div>
+                <button class="shop-item-btn" id="square-buy-btn" onclick="buySquare()"><h2><h2 id="square-buy-btn-txt">Cost: 1.000e8</h2></h2></button>
+            </div>
         </div>
         <div id="tab-list" style="position: absolute; bottom: 0; width: max-content; left:50%; transform: translate(-50%, -50%); display: none;">
             <div id="tab-container">

@@ -29,6 +29,9 @@ function loadData() {
     playerData.trianglesGenerator.tier4.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier4.lvl)
 
     playerData.shop.hasUnlocked = playerDataDeserialized.shop.hasUnlocked
+    playerData.shop.items.circle.hasBought = playerDataDeserialized.shop.items.circle.hasBought
+    playerData.shop.items.triangles.hasBought = playerDataDeserialized.shop.items.triangles.hasBought
+    playerData.shop.items.square.hasBought = playerDataDeserialized.shop.items.square.hasBought
 
     console.log(playerDataDeserialized)
     showUnlocked()
@@ -54,6 +57,7 @@ function showUnlocked() {
         document.getElementById("t2-line").style.display = "block"
     }
     if (playerData.shop.hasUnlocked === true && playerData.trianglesGenerator.tier4.hasUnlocked === false) {
+        document.getElementById("shop-list").style.display = "none"
         document.getElementById("t3-line").style.display = "block"
         document.getElementById("tri-gen-t4-container").style.padding = "20px"
         document.getElementById("shop-unlock").style.display = "none"
@@ -61,10 +65,29 @@ function showUnlocked() {
         document.getElementById("t4-triangle-unlock").style.display = "block"
     }
     if (playerData.shop.hasUnlocked === true && playerData.trianglesGenerator.tier4.hasUnlocked === true) {
+        document.getElementById("shop-list").style.display = "none"
         document.getElementById("t3-line").style.display = "block"
         document.getElementById("shop-tab").style.display = "block"
         document.getElementById("tri-gen-t4-container").style.padding = "0"
         document.getElementById("t4-triangle-unlock").style.display = "none"
         document.getElementById("tri-gen-t4").style.display = "grid"
+    }
+    if (playerData.shop.items.circle.hasBought == true) {
+        document.getElementById("circle-buy-btn").classList.add("btn-already-bought")
+        document.getElementById("circle-buy-btn-txt").innerHTML = "BOUGHT"
+        document.getElementById("circle-buy-btn").classList.remove("btn-can-afford")
+        document.getElementById("circle-buy-btn").classList.remove("btn-cant-afford")
+    }
+    if (playerData.shop.items.triangles.hasBought == true) {
+        document.getElementById("triangles-buy-btn").classList.add("btn-already-bought")
+        document.getElementById("triangles-buy-btn-txt").innerHTML = "BOUGHT"
+        document.getElementById("triangles-buy-btn").classList.remove("btn-can-afford")
+        document.getElementById("triangles-buy-btn").classList.remove("btn-cant-afford")
+    }
+    if (playerData.shop.items.square.hasBought == true) {
+        document.getElementById("square-buy-btn").classList.add("btn-already-bought")
+        document.getElementById("square-buy-btn-txt").innerHTML = "BOUGHT"
+        document.getElementById("square-buy-btn").classList.remove("btn-can-afford")
+        document.getElementById("square-buy-btn").classList.remove("btn-cant-afford")
     }
 }
