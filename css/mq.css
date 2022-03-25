@@ -55,7 +55,8 @@
     font-size: 18px;
   }
   .generator {
-    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     grid-template-columns: 50% auto;
     grid-template-rows: 80% 20%;
   }
@@ -90,11 +91,9 @@
 }
 @media screen and (max-width: 450px) and (max-height: 780px) {
   #gen-list {
-    max-height: 450px;
+    max-height: fit-content;
   }
-}
-@media screen and (max-width: 300px) and (max-height: 700px) {
-  #gen-list {
-    max-height: 400px;
+  #shop-list {
+    max-height: fit-content;
   }
 }

@@ -29,7 +29,7 @@
                     <h2 class="gen-name">Triangle Generator [T1]</h2>
                     <h2 class="gen-level">LVL <span id="tri-gen-t1-lvl">x</span></h2>
                     <h2 class="gen-produce">Producing <span id="tri-gen-t1-produce">x</span><img class="triangle-icon icon-3"/>/s</h2>
-                    <button class="gen-buy-btn" id="tri-gen-t1-buy-btn" onclick="upgradeTriangleTier1Generator()"><h2>Cost: <span id="tri-gen-t1-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
+                    <button class="gen-buy-btn" id="tri-gen-t1-buy-btn" onclick="upgradeFirstTriangleGenerator()"><h2>Cost: <span id="tri-gen-t1-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
                 </div>
                 <div class="line" id="t1-line" style="display: none"></div>
             </div>
@@ -39,7 +39,7 @@
                     <h2 class="gen-name">Triangle Generator [T2]</h2>
                     <h2 class="gen-level">LVL <span id="tri-gen-t2-lvl">x</span></h2>
                     <h2 class="gen-produce">Producing <span id="tri-gen-t2-produce">x</span> T1 Generators/s</h2>
-                    <button class="gen-buy-btn" id="tri-gen-t2-buy-btn" onclick="upgradeTriangleTier2Generator()"><h2>Cost: <span id="tri-gen-t2-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
+                    <button class="gen-buy-btn" id="tri-gen-t2-buy-btn" onclick="upgradeSecondTriangleGenerator()"><h2>Cost: <span id="tri-gen-t2-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
                 </div>
                 <div class="line" id="t2-line" style="display: none"></div>
             </div>
@@ -49,7 +49,7 @@
                     <h2 class="gen-name">Triangle Generator [T3]</h2>
                     <h2 class="gen-level">LVL <span id="tri-gen-t3-lvl">x</span></h2>
                     <h2 class="gen-produce">Producing <span id="tri-gen-t3-produce">x</span> T2 Generators/s</h2>
-                    <button class="gen-buy-btn" id="tri-gen-t3-buy-btn" onclick="upgradeTriangleTier3Generator()"><h2>Cost: <span id="tri-gen-t3-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
+                    <button class="gen-buy-btn" id="tri-gen-t3-buy-btn" onclick="upgradeThirdTriangleGenerator()"><h2>Cost: <span id="tri-gen-t3-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
                 </div>
                 <div class="line" id="t3-line" style="display: none"></div>
             </div>
@@ -60,7 +60,37 @@
                     <h2 class="gen-name">Triangle Generator [T4]</h2>
                     <h2 class="gen-level">LVL <span id="tri-gen-t4-lvl">x</span></h2>
                     <h2 class="gen-produce">Producing <span id="tri-gen-t4-produce">x</span> T3 Generators/s</h2>
-                    <button class="gen-buy-btn" id="tri-gen-t4-buy-btn" onclick="upgradeTriangleTier4Generator()"><h2>Cost: <span id="tri-gen-t4-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
+                    <button class="gen-buy-btn" id="tri-gen-t4-buy-btn" onclick="upgradeFourthTriangleGenerator()"><h2>Cost: <span id="tri-gen-t4-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
+                </div>
+                <div class="line" id="t4-line" style="display: none"></div>
+            </div>
+            <div id="tri-gen-t5-container">
+                <button class="unlock-btn" id="t5-triangle-unlock" onclick="unlockFifthTriangleGenerator()" style="display: none"><h2>Tier 5 Triangle Generator<br/>Cost: 1.000e10<img class="triangle-icon icon-3"/></h2></button>
+                <div class="generator" id="tri-gen-t5" style="display: none">
+                    <h2 class="gen-name">Triangle Generator [T5]</h2>
+                    <h2 class="gen-level">LVL <span id="tri-gen-t5-lvl">x</span></h2>
+                    <h2 class="gen-produce">Producing <span id="tri-gen-t5-produce">x</span> T4 Generators/s</h2>
+                    <button class="gen-buy-btn" id="tri-gen-t5-buy-btn" onclick="upgradeFifthTriangleGenerator()"><h2>Cost: <span id="tri-gen-t5-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
+                </div>
+                <div class="line" id="t5-line" style="display: none"></div>
+            </div>
+            <div id="tri-gen-t6-container">
+                <button class="unlock-btn" id="t6-triangle-unlock" onclick="unlockSixthTriangleGenerator()" style="display: none"><h2>Tier 6 Triangle Generator<br/>Cost: 1.000e12<img class="triangle-icon icon-3"/></h2></button>
+                <div class="generator" id="tri-gen-t6" style="display: none">
+                    <h2 class="gen-name">Triangle Generator [T6]</h2>
+                    <h2 class="gen-level">LVL <span id="tri-gen-t6-lvl">x</span></h2>
+                    <h2 class="gen-produce">Producing <span id="tri-gen-t6-produce">x</span> T5 Generators/s</h2>
+                    <button class="gen-buy-btn" id="tri-gen-t6-buy-btn" onclick="upgradeSixthTriangleGenerator()"><h2>Cost: <span id="tri-gen-t6-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
+                </div>
+                <div class="line" id="t6-line" style="display: none"></div>
+            </div>
+            <div id="tri-gen-t7-container">
+                <button class="unlock-btn" id="t7-triangle-unlock" onclick="unlockSeventhTriangleGenerator()" style="display: none"><h2>Tier 7 Triangle Generator<br/>Cost: 1.000e14<img class="triangle-icon icon-3"/></h2></button>
+                <div class="generator" id="tri-gen-t7" style="display: none">
+                    <h2 class="gen-name">Triangle Generator [T7]</h2>
+                    <h2 class="gen-level">LVL <span id="tri-gen-t7-lvl">x</span></h2>
+                    <h2 class="gen-produce">Producing <span id="tri-gen-t7-produce">x</span> T6 Generators/s</h2>
+                    <button class="gen-buy-btn" id="tri-gen-t7-buy-btn" onclick="upgradeSeventhTriangleGenerator()"><h2>Cost: <span id="tri-gen-t7-buy-btn-txt">x</span><img class="triangle-icon icon-3"/></h2></button>
                 </div>
             </div>
         </div>

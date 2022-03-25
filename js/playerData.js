@@ -1,5 +1,5 @@
 var playerData = {
-    trianglesAmount: new Decimal("2e8"),
+    trianglesAmount: new Decimal("1e15"),
     trianglesGenerator: {
         tier1: {
             hasUnlocked: false,
@@ -29,6 +29,30 @@ var playerData = {
             hasUnlocked: false,
             cost: new Decimal("1e8"),
             costIncrease: new Decimal("1.08"),
+            lvl: new Decimal("0"),
+            amountBought: 0,
+            multiplier: new Decimal("1")
+        },
+        tier5: {
+            hasUnlocked: false,
+            cost: new Decimal("1e10"),
+            costIncrease: new Decimal("1.08"),
+            lvl: new Decimal("0"),
+            amountBought: 0,
+            multiplier: new Decimal("1")
+        },
+        tier6: {
+            hasUnlocked: false,
+            cost: new Decimal("1e12"),
+            costIncrease: new Decimal("1.09"),
+            lvl: new Decimal("0"),
+            amountBought: 0,
+            multiplier: new Decimal("1")
+        },
+        tier7: {
+            hasUnlocked: false,
+            cost: new Decimal("1e14"),
+            costIncrease: new Decimal("1.09"),
             lvl: new Decimal("0"),
             amountBought: 0,
             multiplier: new Decimal("1")

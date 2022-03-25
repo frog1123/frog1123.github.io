@@ -81,5 +81,8 @@ function buySquare() {
         playerData.trianglesGenerator.tier2.costIncrease = playerData.trianglesGenerator.tier2.costIncrease.sub("1").div("2").add("1")
         playerData.trianglesGenerator.tier3.costIncrease = playerData.trianglesGenerator.tier3.costIncrease.sub("1").div("2").add("1")
         playerData.trianglesGenerator.tier4.costIncrease = playerData.trianglesGenerator.tier4.costIncrease.sub("1").div("2").add("1")
+        playerData.trianglesGenerator.tier5.costIncrease = playerData.trianglesGenerator.tier5.costIncrease.sub("1").div("2").add("1")
+        playerData.trianglesGenerator.tier6.costIncrease = playerData.trianglesGenerator.tier6.costIncrease.sub("1").div("2").add("1")
+        playerData.trianglesGenerator.tier7.costIncrease = playerData.trianglesGenerator.tier7.costIncrease.sub("1").div("2").add("1")
     }
 }
