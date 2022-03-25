@@ -12,21 +12,34 @@ function loadData() {
     playerData.trianglesGenerator.tier2.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier2.hasUnlocked
     playerData.trianglesGenerator.tier3.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier3.hasUnlocked
     playerData.trianglesGenerator.tier4.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier4.hasUnlocked
+    playerData.trianglesGenerator.tier5.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier5.hasUnlocked
+    playerData.trianglesGenerator.tier6.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier6.hasUnlocked
+    playerData.trianglesGenerator.tier7.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier7.hasUnlocked
+    
 
     playerData.trianglesGenerator.tier1.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier1.cost)
     playerData.trianglesGenerator.tier2.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier2.cost)
     playerData.trianglesGenerator.tier3.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier3.cost)
     playerData.trianglesGenerator.tier4.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier4.cost)
+    playerData.trianglesGenerator.tier5.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier5.cost)
+    playerData.trianglesGenerator.tier6.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier6.cost)
+    playerData.trianglesGenerator.tier7.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier7.cost)
 
     playerData.trianglesGenerator.tier1.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.tier1.costIncrease)
     playerData.trianglesGenerator.tier2.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.tier2.costIncrease)
     playerData.trianglesGenerator.tier3.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.tier3.costIncrease)
     playerData.trianglesGenerator.tier4.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.tier4.costIncrease)
+    playerData.trianglesGenerator.tier5.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.tier5.costIncrease)
+    playerData.trianglesGenerator.tier6.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.tier6.costIncrease)
+    playerData.trianglesGenerator.tier7.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.tier7.costIncrease)
 
     playerData.trianglesGenerator.tier1.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier1.lvl)
     playerData.trianglesGenerator.tier2.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier2.lvl)
     playerData.trianglesGenerator.tier3.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier3.lvl)
     playerData.trianglesGenerator.tier4.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier4.lvl)
+    playerData.trianglesGenerator.tier5.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier5.lvl)
+    playerData.trianglesGenerator.tier6.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier6.lvl)
+    playerData.trianglesGenerator.tier7.lvl = new Decimal(playerDataDeserialized.trianglesGenerator.tier7.lvl)
 
     playerData.shop.hasUnlocked = playerDataDeserialized.shop.hasUnlocked
     playerData.shop.items.circle.hasBought = playerDataDeserialized.shop.items.circle.hasBought
@@ -55,6 +68,30 @@ function showUnlocked() {
         document.getElementById("t3-triangle-unlock").style.display = "none"
         document.getElementById("tri-gen-t3").style.display = "grid"
         document.getElementById("t2-line").style.display = "block"
+    }
+    if (playerData.trianglesGenerator.tier4.hasUnlocked === true) {
+        document.getElementById("tri-gen-t4-container").style.padding = "0"
+        document.getElementById("t4-triangle-unlock").style.display = "none"
+        document.getElementById("tri-gen-t4").style.display = "grid"
+        document.getElementById("t3-line").style.display = "block"
+    }
+    if (playerData.trianglesGenerator.tier5.hasUnlocked === true) {
+        document.getElementById("tri-gen-t5-container").style.padding = "0"
+        document.getElementById("t5-triangle-unlock").style.display = "none"
+        document.getElementById("tri-gen-t5").style.display = "grid"
+        document.getElementById("t4-line").style.display = "block"
+    }
+    if (playerData.trianglesGenerator.tier6.hasUnlocked === true) {
+        document.getElementById("tri-gen-t6-container").style.padding = "0"
+        document.getElementById("t6-triangle-unlock").style.display = "none"
+        document.getElementById("tri-gen-t6").style.display = "grid"
+        document.getElementById("t5-line").style.display = "block"
+    }
+    if (playerData.trianglesGenerator.tier7.hasUnlocked === true) {
+        document.getElementById("tri-gen-t7-container").style.padding = "0"
+        document.getElementById("t7-triangle-unlock").style.display = "none"
+        document.getElementById("tri-gen-t7").style.display = "grid"
+        document.getElementById("t6-line").style.display = "block"
     }
     if (playerData.shop.hasUnlocked === true && playerData.trianglesGenerator.tier4.hasUnlocked === false) {
         document.getElementById("shop-list").style.display = "none"

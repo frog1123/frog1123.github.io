@@ -1,5 +1,5 @@
 var playerData = {
-    trianglesAmount: new Decimal("1e15"),
+    trianglesAmount: new Decimal("10"),
     trianglesGenerator: {
         tier1: {
             hasUnlocked: false,
