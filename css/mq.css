@@ -88,6 +88,9 @@
     width: 25px;
     height: 25px;
   }
+  #lightning-buy-btn {
+    width: 80%;
+  }
 }
 @media screen and (max-width: 450px) and (max-height: 780px) {
   #gen-list {

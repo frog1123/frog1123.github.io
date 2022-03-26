@@ -24,6 +24,14 @@
         <h2 id="gain-txt" style="display: none">Gaining <span id="triangle-gaining-txt" style="font-size: 2em">x</span><img class="triangle-icon icon-2"/>/s</h2>
         <button class="unlock-btn btn-can-afford" id="t1-triangle-unlock" onclick="unlockFirstTriangleGenerator()"><h2>Tier 1 Triangle Generator<br/>Cost: 10<img class="triangle-icon icon-3"/></h2></button>
         <div id="gen-list">
+            <div id="lightning-container">
+                <div id="lightning-info" style="display: none; padding: 10px">
+                    <h1 style="margin: 0;font-size: 4em; color: #00c5f7"><span id="lightning-amount-txt">x</span><img src="./assets/svg/lightning.svg" class="icon-2"/></h1>
+                    <h2><span id="lightning-produce-txt" style="color: #00c5f7">+x%</span> Production rate on all triangle generators</h2>
+                    <button id="lightning-buy-btn" onclick="buyLightning()"><h2 id="lightning-buy-btn-txt">Cost: x</h2></button>
+                </div>
+                <div class="line" id="lightning-line" style="display: none"/>
+            </div>
             <div id="tri-gen-t1-container">
                 <div class="generator" id="tri-gen-t1">
                     <h2 class="gen-name">Triangle Generator [T1]</h2>

@@ -1,6 +1,13 @@
 var playerData = {
-    trianglesAmount: new Decimal("10"),
+    trianglesAmount: new Decimal("1e23"),
     trianglesGenerator: {
+        lightning: {
+            hasUnlocked: false,
+            cost: new Decimal("1e20"),
+            costIncrease: new Decimal("10"),
+            lightningAmount: new Decimal("0"),
+            effectiveness: new Decimal("1")
+        },
         tier1: {
             hasUnlocked: false,
             cost: new Decimal("10"),

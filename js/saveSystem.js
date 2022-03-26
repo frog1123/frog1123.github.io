@@ -8,6 +8,12 @@ function loadData() {
     let playerDataDeserialized = JSON.parse(localStorage.getItem("playerData"))
     playerData.trianglesAmount = new Decimal(playerDataDeserialized.trianglesAmount)
 
+    playerData.trianglesGenerator.lightning.hasUnlocked = playerDataDeserialized.trianglesGenerator.lightning.hasUnlocked
+    playerData.trianglesGenerator.lightning.cost = new Decimal(playerDataDeserialized.trianglesGenerator.lightning.cost)
+    playerData.trianglesGenerator.lightning.costIncrease = new Decimal(playerDataDeserialized.trianglesGenerator.lightning.costIncrease)
+    playerData.trianglesGenerator.lightning.lightningAmount = new Decimal(playerDataDeserialized.trianglesGenerator.lightning.lightningAmount)
+    playerData.trianglesGenerator.lightning.effectiveness = new Decimal(playerDataDeserialized.trianglesGenerator.lightning.effectiveness)
+
     playerData.trianglesGenerator.tier1.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier1.hasUnlocked
     playerData.trianglesGenerator.tier2.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier2.hasUnlocked
     playerData.trianglesGenerator.tier3.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier3.hasUnlocked

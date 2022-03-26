@@ -1,8 +1,22 @@
 function updateTriangleGenerators() {
+    // lightning 
+    if (playerData.trianglesGenerator.lightning.hasUnlocked == true) {
+        document.getElementById("lightning-amount-txt").innerHTML = formatValue(playerData.trianglesGenerator.lightning.lightningAmount)
+        document.getElementById("lightning-produce-txt").innerHTML = `+${formatValueNoDecimal(playerData.trianglesGenerator.lightning.lightningAmount.mul("10"))}%`
+        document.getElementById("lightning-buy-btn-txt").innerHTML = `Cost: ${formatValue(playerData.trianglesGenerator.lightning.cost)}`
+        if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.lightning.cost) >= 0) {
+            document.getElementById("lightning-buy-btn").classList.add("btn-can-afford")
+            document.getElementById("lightning-buy-btn").classList.remove("btn-cant-afford")
+        }
+        else {
+            document.getElementById("lightning-buy-btn").classList.add("btn-cant-afford")
+            document.getElementById("lightning-buy-btn").classList.remove("btn-can-afford")
+        }
+    }
     // tier1
     if (playerData.trianglesGenerator.tier1.hasUnlocked == true) {
         document.getElementById("tri-gen-t1-lvl").innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator.tier1.lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator.tier1.amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator.tier1.multiplier)}` : ""}`
-        document.getElementById("tri-gen-t1-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier1.lvl.mul(playerData.trianglesGenerator.tier1.multiplier))
+        document.getElementById("tri-gen-t1-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier1.lvl.mul(playerData.trianglesGenerator.tier1.multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
         document.getElementById("tri-gen-t1-buy-btn-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier1.cost)
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier1.cost) >= 0) {
             document.getElementById("tri-gen-t1-buy-btn").classList.add("btn-can-afford")
@@ -24,7 +38,7 @@ function updateTriangleGenerators() {
     }
     if (playerData.trianglesGenerator.tier2.hasUnlocked == true) {
         document.getElementById("tri-gen-t2-lvl").innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator.tier2.lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator.tier2.amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator.tier2.multiplier)}` : ""}`
-        document.getElementById("tri-gen-t2-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier2.lvl.mul(playerData.trianglesGenerator.tier2.multiplier))
+        document.getElementById("tri-gen-t2-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier2.lvl.mul(playerData.trianglesGenerator.tier2.multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
         document.getElementById("tri-gen-t2-buy-btn-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier2.cost)
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier2.cost) >= 0) {
             document.getElementById("tri-gen-t2-buy-btn").classList.add("btn-can-afford")
@@ -46,7 +60,7 @@ function updateTriangleGenerators() {
     }
     if (playerData.trianglesGenerator.tier3.hasUnlocked == true) {
         document.getElementById("tri-gen-t3-lvl").innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator.tier3.lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator.tier3.amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator.tier3.multiplier)}` : ""}`
-        document.getElementById("tri-gen-t3-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier3.lvl.mul(playerData.trianglesGenerator.tier3.multiplier))
+        document.getElementById("tri-gen-t3-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier3.lvl.mul(playerData.trianglesGenerator.tier3.multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
         document.getElementById("tri-gen-t3-buy-btn-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier3.cost)
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost) >= 0) {
             document.getElementById("tri-gen-t3-buy-btn").classList.add("btn-can-afford")
@@ -68,7 +82,7 @@ function updateTriangleGenerators() {
     }
     if (playerData.trianglesGenerator.tier4.hasUnlocked == true) {
         document.getElementById("tri-gen-t4-lvl").innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator.tier4.lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator.tier4.amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator.tier4.multiplier)}` : ""}`
-        document.getElementById("tri-gen-t4-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier4.lvl.mul(playerData.trianglesGenerator.tier4.multiplier))
+        document.getElementById("tri-gen-t4-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier4.lvl.mul(playerData.trianglesGenerator.tier4.multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
         document.getElementById("tri-gen-t4-buy-btn-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier4.cost)
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier4.cost) >= 0) {
             document.getElementById("tri-gen-t4-buy-btn").classList.add("btn-can-afford")
@@ -90,7 +104,7 @@ function updateTriangleGenerators() {
     }
     if (playerData.trianglesGenerator.tier5.hasUnlocked == true) {
         document.getElementById("tri-gen-t5-lvl").innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator.tier5.lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator.tier5.amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator.tier5.multiplier)}` : ""}`
-        document.getElementById("tri-gen-t5-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier5.lvl.mul(playerData.trianglesGenerator.tier5.multiplier))
+        document.getElementById("tri-gen-t5-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier5.lvl.mul(playerData.trianglesGenerator.tier5.multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
         document.getElementById("tri-gen-t5-buy-btn-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier5.cost)
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier5.cost) >= 0) {
             document.getElementById("tri-gen-t5-buy-btn").classList.add("btn-can-afford")
@@ -112,7 +126,7 @@ function updateTriangleGenerators() {
     }
     if (playerData.trianglesGenerator.tier6.hasUnlocked == true) {
         document.getElementById("tri-gen-t6-lvl").innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator.tier6.lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator.tier6.amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator.tier6.multiplier)}` : ""}`
-        document.getElementById("tri-gen-t6-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier6.lvl.mul(playerData.trianglesGenerator.tier6.multiplier))
+        document.getElementById("tri-gen-t6-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier6.lvl.mul(playerData.trianglesGenerator.tier6.multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
         document.getElementById("tri-gen-t6-buy-btn-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier6.cost)
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier6.cost) >= 0) {
             document.getElementById("tri-gen-t6-buy-btn").classList.add("btn-can-afford")
@@ -134,7 +148,7 @@ function updateTriangleGenerators() {
     }
     if (playerData.trianglesGenerator.tier7.hasUnlocked == true) {
         document.getElementById("tri-gen-t7-lvl").innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator.tier7.lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator.tier7.amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator.tier7.multiplier)}` : ""}`
-        document.getElementById("tri-gen-t7-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier7.lvl.mul(playerData.trianglesGenerator.tier7.multiplier))
+        document.getElementById("tri-gen-t7-produce").innerHTML = formatValue(playerData.trianglesGenerator.tier7.lvl.mul(playerData.trianglesGenerator.tier7.multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
         document.getElementById("tri-gen-t7-buy-btn-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier7.cost)
         if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier7.cost) >= 0) {
             document.getElementById("tri-gen-t7-buy-btn").classList.add("btn-can-afford")
@@ -144,6 +158,21 @@ function updateTriangleGenerators() {
             document.getElementById("tri-gen-t7-buy-btn").classList.add("btn-cant-afford")
             document.getElementById("tri-gen-t7-buy-btn").classList.remove("btn-can-afford")
         }
+    }
+}
+function unlockLightning() {
+    if (playerData.trianglesGenerator.lightning.hasUnlocked == false && playerData.trianglesAmount.sub("1e18") >= 0) {
+        playerData.trianglesGenerator.lightning.hasUnlocked = true
+        document.getElementById("lightning-info").style.display = "block"
+        document.getElementById("lightning-line").style.display = "block"
+    }
+}
+function buyLightning() {
+    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.lightning.cost) >= 0) {
+        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.lightning.cost)
+        playerData.trianglesGenerator.lightning.cost = playerData.trianglesGenerator.lightning.cost.mul(playerData.trianglesGenerator.lightning.costIncrease)
+        playerData.trianglesGenerator.lightning.lightningAmount = playerData.trianglesGenerator.lightning.lightningAmount.add("1")
+        playerData.trianglesGenerator.lightning.effectiveness = playerData.trianglesGenerator.lightning.lightningAmount.mul("0.1").add("1")
     }
 }
 function unlockFirstTriangleGenerator() {

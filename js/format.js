@@ -12,10 +12,10 @@ function formatValue(value) {
         if (value.mag < 1e4 && value.mag > 1e-4 || value.mag === 0) {
             return (value.sign * value.mag).toFixed(3)
         }
-        return value.m.toFixed(3) + "e" + value.e.toLocaleString();
+        return (Math.trunc(value.m * 100) / 100).toFixed(3) + "e" + value.e.toLocaleString();
     }
     else if (value.layer === 1) {
-        return value.m.toFixed(3) + "e" + value.e.toLocaleString();
+        return (Math.trunc(value.m * 100) / 100).toFixed(3) + "e" + value.e.toLocaleString();
     }
     else {
         return (value.sign === -1 ? "-" : "") + "e".repeat(value.layer) + value.mag.toLocaleString();
