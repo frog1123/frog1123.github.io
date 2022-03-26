@@ -1,5 +1,5 @@
 var playerData = {
-    trianglesAmount: new Decimal("1e23"),
+    trianglesAmount: new Decimal("10"),
     trianglesGenerator: {
         lightning: {
             hasUnlocked: false,
