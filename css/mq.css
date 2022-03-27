@@ -3,12 +3,15 @@
     font-size: 16px;
   }
   .icon-2 {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
   .icon-3 {
     width: 15px;
     height: 15px;
+  }
+  #lightning-amount-txt {
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -42,8 +45,8 @@
     font-size: 20px;
   }
   .icon-1 {
-    width: 35px;
-    height: 35px;
+    width: 33px;
+    height: 33px;
   }
   .unlock-btn {
     width: 400px;
@@ -83,6 +86,10 @@
   }
   .tab-btn {
     width: 45vw;
+  }
+  .icon-1 {
+    width: 30px;
+    height: 30px;
   }
   .icon-2 {
     width: 25px;
