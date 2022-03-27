@@ -56,7 +56,7 @@ function loadData() {
     showUnlocked()
 }
 function showUnlocked() {
-    if (playerData.trianglesGenerator.lightning.hasUnlocked == true) {
+    if (playerData.trianglesGenerator.lightning.hasUnlocked === true) {
         document.getElementById("lightning-info").style.display = "block"
         document.getElementById("lightning-line").style.display = "block"
     }
