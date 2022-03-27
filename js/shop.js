@@ -77,7 +77,7 @@ function buySquare() {
         document.getElementById("square-buy-btn").classList.remove("btn-can-afford")
         document.getElementById("square-buy-btn").classList.remove("btn-cant-afford")
         
-        playerData.trianglesGenerator.tier2.costIncrease = playerData.trianglesGenerator.tier1.costIncrease.sub("1").div("2").add("1")
+        playerData.trianglesGenerator.tier1.costIncrease = playerData.trianglesGenerator.tier1.costIncrease.sub("1").div("2").add("1")
         playerData.trianglesGenerator.tier2.costIncrease = playerData.trianglesGenerator.tier2.costIncrease.sub("1").div("2").add("1")
         playerData.trianglesGenerator.tier3.costIncrease = playerData.trianglesGenerator.tier3.costIncrease.sub("1").div("2").add("1")
         playerData.trianglesGenerator.tier4.costIncrease = playerData.trianglesGenerator.tier4.costIncrease.sub("1").div("2").add("1")
