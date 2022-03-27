@@ -175,6 +175,20 @@ function buyLightning() {
         playerData.trianglesGenerator.lightning.effectiveness = playerData.trianglesGenerator.lightning.lightningAmount.mul("0.1").add("1")
     }
 }
+function upgradeTriangleGenerator(tier) {
+    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator["tier" + tier].cost) >= 0) {
+        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator["tier" + tier].cost)
+        playerData.trianglesGenerator["tier" + tier].lvl = playerData.trianglesGenerator["tier" + tier].lvl.add("1")
+        playerData.trianglesGenerator["tier" + tier].cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator["tier" + tier].cost, playerData.trianglesGenerator["tier" + tier].costIncrease))
+        if (playerData.shop.items.triangles.hasBought == true) {
+            playerData.trianglesGenerator["tier" + tier].amountBought++;
+            if (playerData.trianglesGenerator["tier" + tier].amountBought == 10) {
+                playerData.trianglesGenerator["tier" + tier].amountBought = 0
+                playerData.trianglesGenerator["tier" + tier].multiplier = playerData.trianglesGenerator["tier" + tier].multiplier.mul("2")
+            }
+        }
+    } 
+}
 function unlockFirstTriangleGenerator() {
     if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier1.cost) >= 0) {
         playerData.trianglesGenerator.tier1.hasUnlocked = true
@@ -186,20 +200,6 @@ function unlockFirstTriangleGenerator() {
         document.getElementById("tri-gen-t1").style.display = "grid"
         document.getElementById("tab-list").style.display = "block"
         playerData.trianglesGenerator.tier1.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier1.cost, playerData.trianglesGenerator.tier1.costIncrease))
-    }
-}
-function upgradeFirstTriangleGenerator() {
-    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier1.cost) >= 0) {
-        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier1.cost)
-        playerData.trianglesGenerator.tier1.lvl = playerData.trianglesGenerator.tier1.lvl.add("1")
-        playerData.trianglesGenerator.tier1.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier1.cost, playerData.trianglesGenerator.tier1.costIncrease))
-        if (playerData.shop.items.triangles.hasBought == true) {
-            playerData.trianglesGenerator.tier1.amountBought++;
-            if (playerData.trianglesGenerator.tier1.amountBought == 10) {
-                playerData.trianglesGenerator.tier1.amountBought = 0
-                playerData.trianglesGenerator.tier1.multiplier = playerData.trianglesGenerator.tier1.multiplier.mul("2")
-            }
-        }
     }
 }
 function showSecondUnlockButton() {
@@ -222,20 +222,6 @@ function unlockSecondTriangleGenerator() {
         playerData.trianglesGenerator.tier2.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier2.cost, playerData.trianglesGenerator.tier2.costIncrease))
     }
 }
-function upgradeSecondTriangleGenerator() {
-    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier2.cost) >= 0) {
-        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier2.cost)
-        playerData.trianglesGenerator.tier2.lvl = playerData.trianglesGenerator.tier2.lvl.add("1")
-        playerData.trianglesGenerator.tier2.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier2.cost, playerData.trianglesGenerator.tier2.costIncrease))
-        if (playerData.shop.items.triangles.hasBought == true) {
-            playerData.trianglesGenerator.tier2.amountBought++;
-            if (playerData.trianglesGenerator.tier2.amountBought == 10) {
-                playerData.trianglesGenerator.tier2.amountBought = 0
-                playerData.trianglesGenerator.tier2.multiplier = playerData.trianglesGenerator.tier2.multiplier.mul("2")
-            }
-        }
-    }
-}
 function showThirdUnlockButton() {
     if (playerData.trianglesGenerator.tier2.hasUnlocked == true && playerData.trianglesGenerator.tier3.hasUnlocked == false && playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost.div("2")) >= 0) {
         document.getElementById("tri-gen-t3-container").style.display = "block"
@@ -256,20 +242,6 @@ function unlockThirdTriangleGenerator() {
         playerData.trianglesGenerator.tier3.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier3.cost, playerData.trianglesGenerator.tier3.costIncrease))
     }
 }
-function upgradeThirdTriangleGenerator() {
-    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost) >= 0) {
-        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier3.cost)
-        playerData.trianglesGenerator.tier3.lvl = playerData.trianglesGenerator.tier3.lvl.add("1")
-        playerData.trianglesGenerator.tier3.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier3.cost, playerData.trianglesGenerator.tier3.costIncrease))
-        if (playerData.shop.items.triangles.hasBought == true) {
-            playerData.trianglesGenerator.tier3.amountBought++;
-            if (playerData.trianglesGenerator.tier3.amountBought == 10) {
-                playerData.trianglesGenerator.tier3.amountBought = 0
-                playerData.trianglesGenerator.tier3.multiplier = playerData.trianglesGenerator.tier3.multiplier.mul("2")
-            }
-        }
-    }
-}
 function unlockFourthTriangleGenerator() {
     if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier4.cost) >= 0) {
         playerData.trianglesGenerator.tier4.hasUnlocked = true
@@ -280,20 +252,6 @@ function unlockFourthTriangleGenerator() {
         document.getElementById("tri-gen-t4").style.display = "grid"
         document.getElementById("t3-line").style.display = "block"
         playerData.trianglesGenerator.tier4.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier4.cost, playerData.trianglesGenerator.tier4.costIncrease))
-    }
-}
-function upgradeFourthTriangleGenerator() {
-    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier4.cost) >= 0) {
-        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier4.cost)
-        playerData.trianglesGenerator.tier4.lvl = playerData.trianglesGenerator.tier4.lvl.add("1")
-        playerData.trianglesGenerator.tier4.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier4.cost, playerData.trianglesGenerator.tier4.costIncrease))
-        if (playerData.shop.items.triangles.hasBought == true) {
-            playerData.trianglesGenerator.tier4.amountBought++;
-            if (playerData.trianglesGenerator.tier4.amountBought == 10) {
-                playerData.trianglesGenerator.tier4.amountBought = 0
-                playerData.trianglesGenerator.tier4.multiplier = playerData.trianglesGenerator.tier4.multiplier.mul("2")
-            }
-        }
     }
 }
 function showFifthUnlockButton() {
@@ -316,20 +274,6 @@ function unlockFifthTriangleGenerator() {
         playerData.trianglesGenerator.tier5.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier5.cost, playerData.trianglesGenerator.tier5.costIncrease))
     }
 }
-function upgradeFifthTriangleGenerator() {
-    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier5.cost) >= 0) {
-        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier5.cost)
-        playerData.trianglesGenerator.tier5.lvl = playerData.trianglesGenerator.tier5.lvl.add("1")
-        playerData.trianglesGenerator.tier5.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier5.cost, playerData.trianglesGenerator.tier5.costIncrease))
-        if (playerData.shop.items.triangles.hasBought == true) {
-            playerData.trianglesGenerator.tier5.amountBought++;
-            if (playerData.trianglesGenerator.tier5.amountBought == 10) {
-                playerData.trianglesGenerator.tier5.amountBought = 0
-                playerData.trianglesGenerator.tier5.multiplier = playerData.trianglesGenerator.tier5.multiplier.mul("2")
-            }
-        }
-    }
-}
 function showSixthUnlockButton() {
     if (playerData.trianglesGenerator.tier5.hasUnlocked == true && playerData.trianglesGenerator.tier6.hasUnlocked == false && playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier6.cost.div("2")) >= 0) {
         document.getElementById("tri-gen-t6-container").style.display = "block"
@@ -350,20 +294,6 @@ function unlockSixthTriangleGenerator() {
         playerData.trianglesGenerator.tier6.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier6.cost, playerData.trianglesGenerator.tier6.costIncrease))
     }
 }
-function upgradeSixthTriangleGenerator() {
-    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier6.cost) >= 0) {
-        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier6.cost)
-        playerData.trianglesGenerator.tier6.lvl = playerData.trianglesGenerator.tier6.lvl.add("1")
-        playerData.trianglesGenerator.tier6.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier6.cost, playerData.trianglesGenerator.tier6.costIncrease))
-        if (playerData.shop.items.triangles.hasBought == true) {
-            playerData.trianglesGenerator.tier6.amountBought++;
-            if (playerData.trianglesGenerator.tier6.amountBought == 10) {
-                playerData.trianglesGenerator.tier6.amountBought = 0
-                playerData.trianglesGenerator.tier6.multiplier = playerData.trianglesGenerator.tier6.multiplier.mul("2")
-            }
-        }
-    }
-}
 function showSeventhUnlockButton() {
     if (playerData.trianglesGenerator.tier6.hasUnlocked == true && playerData.trianglesGenerator.tier7.hasUnlocked == false && playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier7.cost.div("2")) >= 0) {
         document.getElementById("tri-gen-t7-container").style.display = "block"
@@ -382,19 +312,5 @@ function unlockSeventhTriangleGenerator() {
         document.getElementById("tri-gen-t7").style.display = "grid"
         document.getElementById("t6-line").style.display = "block"
         playerData.trianglesGenerator.tier7.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier7.cost, playerData.trianglesGenerator.tier7.costIncrease))
-    }
-}
-function upgradeSeventhTriangleGenerator() {
-    if (playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier7.cost) >= 0) {
-        playerData.trianglesAmount = playerData.trianglesAmount.sub(playerData.trianglesGenerator.tier7.cost)
-        playerData.trianglesGenerator.tier7.lvl = playerData.trianglesGenerator.tier7.lvl.add("1")
-        playerData.trianglesGenerator.tier7.cost = Decimal.round(Decimal.pow(playerData.trianglesGenerator.tier7.cost, playerData.trianglesGenerator.tier7.costIncrease))
-        if (playerData.shop.items.triangles.hasBought == true) {
-            playerData.trianglesGenerator.tier7.amountBought++;
-            if (playerData.trianglesGenerator.tier7.amountBought == 10) {
-                playerData.trianglesGenerator.tier7.amountBought = 0
-                playerData.trianglesGenerator.tier7.multiplier = playerData.trianglesGenerator.tier7.multiplier.mul("2")
-            }
-        }
     }
 }
