@@ -1,7 +1,13 @@
 setInterval(update, 100)
 function update() {
     updateTrianglesAmountText()
-    updateTriangleGenerators()
+    updateTriangleGenerator(1)
+    updateTriangleGenerator(2)
+    updateTriangleGenerator(3)
+    updateTriangleGenerator(4)
+    updateTriangleGenerator(5)
+    updateTriangleGenerator(6)
+    updateTriangleGenerator(7)
     updateShopButtons()
     //
     incrementTrianglesAmount()
