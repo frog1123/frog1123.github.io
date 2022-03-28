@@ -1,11 +1,11 @@
 function saveData() {
-    let playerDataSerialized = JSON.stringify(playerData)
+    let playerDataSerialized = btoa(JSON.stringify(playerData))
     localStorage.setItem("playerData", playerDataSerialized)
 
     console.log(localStorage)
 }
 function loadData() {
-    let playerDataDeserialized = JSON.parse(localStorage.getItem("playerData"))
+    let playerDataDeserialized = JSON.parse(atob(localStorage.getItem("playerData")))
     playerData.trianglesAmount = new Decimal(playerDataDeserialized.trianglesAmount)
 
     playerData.trianglesGenerator.lightning.hasUnlocked = playerDataDeserialized.trianglesGenerator.lightning.hasUnlocked

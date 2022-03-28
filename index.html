@@ -10,6 +10,7 @@
     <script src="js/saveSystem.js"></script>
     <script src="js/format.js"></script>
     <script src="js/playerData.js"></script>
+    <script src="js/importExport.js"></script>
     <script src="js/switchTabs.js"></script>
     <script src="js/triangleGenerators.js"></script>
     <script src="js/shop.js"></script>
@@ -19,6 +20,8 @@
 <body>
     <button style="width: 100px; height: 50px" onclick="saveData()">SAVE</button>
     <button style="width: 100px; height: 50px" onclick="loadData()">LOAD</button>
+    <button style="width: 100px; height: 50px" onclick="exportData()">EXPORT</button>
+    <button style="width: 100px; height: 50px" onclick="importData()">IMPORT</button>
     <center>
         <h1><span id="triangles-amount-txt" style="font-size: 2em">x</span><img class="triangle-icon icon-1"/></h1>
         <h2 id="gain-txt" style="display: none">Gaining <span id="triangle-gaining-txt" style="font-size: 2em">x</span><img class="triangle-icon icon-2"/>/s</h2>
