@@ -1,6 +1,7 @@
 setInterval(update, 100)
 function update() {
     updateTrianglesAmountText()
+    updateLightning()
     updateTriangleGenerator(1)
     updateTriangleGenerator(2)
     updateTriangleGenerator(3)
