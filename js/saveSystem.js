@@ -22,7 +22,6 @@ function loadData() {
     playerData.trianglesGenerator.tier6.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier6.hasUnlocked
     playerData.trianglesGenerator.tier7.hasUnlocked = playerDataDeserialized.trianglesGenerator.tier7.hasUnlocked
     
-
     playerData.trianglesGenerator.tier1.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier1.cost)
     playerData.trianglesGenerator.tier2.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier2.cost)
     playerData.trianglesGenerator.tier3.cost = new Decimal(playerDataDeserialized.trianglesGenerator.tier3.cost)
