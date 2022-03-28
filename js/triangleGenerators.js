@@ -14,6 +14,14 @@ function updateLightning() {
     }
 }
 function updateTriangleGenerator(tier) {
+    if (playerData.trianglesGenerator["tier" + tier].hasUnlocked == false && playerData.trianglesAmount.sub(playerData.trianglesGenerator["tier" + tier].cost) >= 0) {
+        document.getElementById(`t${tier}-triangle-unlock`).classList.add("btn-can-afford")
+        document.getElementById(`t${tier}-triangle-unlock`).classList.remove("btn-cant-afford")
+    }
+    else {
+        document.getElementById(`t${tier}-triangle-unlock`).classList.add("btn-cant-afford")
+        document.getElementById(`t${tier}-triangle-unlock`).classList.remove("btn-can-afford")
+    }
     if (playerData.trianglesGenerator["tier" + tier].hasUnlocked == true) {
         document.getElementById(`tri-gen-t${tier}-lvl`).innerHTML = `${formatValueNoDecimal(playerData.trianglesGenerator["tier" + tier].lvl)} ${playerData.shop.items.triangles.hasBought ? `(${playerData.trianglesGenerator["tier" + tier].amountBought})` : ""} ${playerData.shop.items.triangles.hasBought ? `x${formatValue(playerData.trianglesGenerator["tier" + tier].multiplier)}` : ""}`
         document.getElementById(`tri-gen-t${tier}-produce`).innerHTML = formatValue(playerData.trianglesGenerator["tier" + tier].lvl.mul(playerData.trianglesGenerator["tier" + tier].multiplier).mul(playerData.trianglesGenerator.lightning.effectiveness))
