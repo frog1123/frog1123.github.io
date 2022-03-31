@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="30,25 50,25 35,55 60,55 20,95 25,70 10,70"
+        style="fill:none;stroke:#008eb3;stroke-width:10;stroke-linejoin:round" />
+    <polygon points="60,15 80,15 65,45 90,45 50,85 55,60 40,60"
+        style="fill:none;stroke:#00c5f7;stroke-width:10;stroke-linejoin:round" />
+</svg>

@@ -1,8 +1,9 @@
 var playerData = {
-    trianglesAmount: new Decimal("10"),
+    trianglesAmount: new Decimal("1e25"),
     trianglesGenerator: {
         lightning: {
             hasUnlocked: false,
+            showUnlock: new Decimal("1e18"),
             cost: new Decimal("1e20"),
             costIncrease: new Decimal("10"),
             lightningAmount: new Decimal("0"),
@@ -18,6 +19,7 @@ var playerData = {
         },
         tier2: {
             hasUnlocked: false,
+            showUnlock: new Decimal("50"),
             cost: new Decimal("100"),
             costIncrease: new Decimal("1.07"),
             lvl: new Decimal("0"),
@@ -26,6 +28,7 @@ var playerData = {
         },
         tier3: {
             hasUnlocked: false,
+            showUnlock: new Decimal("1000"),
             cost: new Decimal("1e4"),
             costIncrease: new Decimal("1.07"),
             lvl: new Decimal("0"),
@@ -42,6 +45,7 @@ var playerData = {
         },
         tier5: {
             hasUnlocked: false,
+            showUnlock: new Decimal("1e9"),
             cost: new Decimal("1e10"),
             costIncrease: new Decimal("1.08"),
             lvl: new Decimal("0"),
@@ -50,6 +54,7 @@ var playerData = {
         },
         tier6: {
             hasUnlocked: false,
+            showUnlock: new Decimal("1e11"),
             cost: new Decimal("1e12"),
             costIncrease: new Decimal("1.09"),
             lvl: new Decimal("0"),
@@ -58,6 +63,7 @@ var playerData = {
         },
         tier7: {
             hasUnlocked: false,
+            showUnlock: new Decimal("5e12"),
             cost: new Decimal("1e14"),
             costIncrease: new Decimal("1.09"),
             lvl: new Decimal("0"),
@@ -67,18 +73,30 @@ var playerData = {
     },
     shop: {
         hasUnlocked: false,
+        showUnlock: new Decimal("1e5"),
+        cost: new Decimal("1e6"),
         items: {
-            circle: {
-                hasBought: false,
-                cost: new Decimal("1e6")
+            row1: {
+                circle: {
+                    hasBought: false,
+                    cost: new Decimal("1e6")
+                },
+                triangles: {
+                    hasBought: false,
+                    cost: new Decimal("1e7")
+                },
+                square: {
+                    hasBought: false,
+                    cost: new Decimal("1e8")
+                }
             },
-            triangles: {
-                hasBought: false,
-                cost: new Decimal("1e7")
-            },
-            square: {
-                hasBought: false,
-                cost: new Decimal("1e8")
+            row2: {
+                hasUnlocked: false,
+                cost: new Decimal("1e20"),
+                thunder: {
+                    hasBought: false,
+                    cost: new Decimal("1e22")
+                }
             }
         }
     }

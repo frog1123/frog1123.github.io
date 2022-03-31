@@ -10,20 +10,33 @@
     width: 15px;
     height: 15px;
   }
+  #lightning-cost-txt {
+    font-size: 15px;
+  }
   #lightning-amount-txt {
     font-size: 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #unlock-shop-items-btn {
+    grid-column: 2;
+  }
+  .shop-line {
+    display: none !important;
   }
 }
 @media screen and (max-width: 1024px) {
   #shop-list {
     width: 97%;
-    grid-template-rows: 33.333% 33.333% 33.333%;
+  }
+  .shop-row {
+    width: 100%;
     grid-template-columns: 100%;
   }
-  #triangles-item {
+  .shop-con-2 {
     grid-row: 2;
   }
-  #square-item {
+  .shop-con-3 {
     grid-row: 3;
   }
   .shop-item {

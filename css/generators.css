@@ -1,0 +1,61 @@
+.unlock-btn {
+  width: 500px;
+  height: 150px;
+  border-radius: 20px;
+  border: solid;
+  background-color: #a0a0a0;
+  margin: auto;
+}
+.unlock-btn:hover {
+  background-color: #878787;
+}
+#lightning-buy-btn {
+  width: 300px;
+  height: 80px;
+  border-radius: 20px;
+  border-style: solid;
+  background-color: #a0a0a0;
+}
+#lightning-amount-txt {
+  font-size: 60px;
+}
+#lightning-cost-txt {
+  font-size: 25px;
+}
+#gen-list {
+  width: 97%;
+  max-height: 550px;
+  display: none;
+  overflow: scroll;
+  grid-template-rows: max-content max-content max-content;
+  background-color: #67686b;
+  border-radius: 20px;
+}
+#gen-list::-webkit-scrollbar {
+  display: none;
+}
+.generator {
+  width: 98%;
+  display: grid;
+  grid-template-columns: 20% 30% auto 20%;
+  align-items: center;
+  padding: 5px;
+}
+.gen-name {
+  justify-self: left;
+  padding-left: 5px;
+}
+.gen-level {
+  justify-self: left;
+}
+.gen-produce {
+  justify-self: right;
+}
+.gen-buy-btn {
+  width: 90%;
+  height: 90%;
+  justify-self: center;
+  background-color: #a0a0a0;
+  border-radius: 10px;
+  border-style: solid;
+}
