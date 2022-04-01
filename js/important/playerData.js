@@ -1,5 +1,5 @@
 var playerData = {
-    trianglesAmount: new Decimal("1e25"),
+    trianglesAmount: new Decimal("1e30"),
     trianglesGenerator: {
         lightning: {
             hasUnlocked: false,
@@ -7,7 +7,16 @@ var playerData = {
             cost: new Decimal("1e20"),
             costIncrease: new Decimal("10"),
             lightningAmount: new Decimal("0"),
-            effectiveness: new Decimal("1")
+            effectiveness: new Decimal("1"),
+            lightningGenerator: {
+                timer: 0,
+                tier1: {
+                    hasUnlocked: false,
+                    cost: new Decimal("2"),
+                    costIncrease: new Decimal("2"),
+                    lvl: new Decimal("0")
+                }
+            }
         },
         tier1: {
             hasUnlocked: false,
@@ -96,6 +105,14 @@ var playerData = {
                 thunder: {
                     hasBought: false,
                     cost: new Decimal("1e22")
+                },
+                storm: {
+                    hasBought: false,
+                    cost: new Decimal("1e24")
+                },
+                diamond: {
+                    hasBought: false,
+                    cost: new Decimal("1e26")
                 }
             }
         }

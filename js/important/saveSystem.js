@@ -13,6 +13,16 @@ function loadData(dataToLoad) {
     playerData.trianglesGenerator.lightning.lightningAmount = new Decimal(dataToLoad.trianglesGenerator.lightning.lightningAmount)
     playerData.trianglesGenerator.lightning.effectiveness = new Decimal(dataToLoad.trianglesGenerator.lightning.effectiveness)
 
+    playerData.trianglesGenerator.lightning.lightningGenerator.timer = dataToLoad.trianglesGenerator.lightning.lightningGenerator.timer
+
+    playerData.trianglesGenerator.lightning.lightningGenerator.tier1.hasUnlocked = dataToLoad.trianglesGenerator.lightning.lightningGenerator.tier1.hasUnlocked
+
+    playerData.trianglesGenerator.lightning.lightningGenerator.tier1.cost = new Decimal(dataToLoad.trianglesGenerator.lightning.lightningGenerator.tier1.cost)
+
+    playerData.trianglesGenerator.lightning.lightningGenerator.tier1.costIncrease = new Decimal(dataToLoad.trianglesGenerator.lightning.lightningGenerator.tier1.costIncrease)
+
+    playerData.trianglesGenerator.lightning.lightningGenerator.tier1.lvl = new Decimal(dataToLoad.trianglesGenerator.lightning.lightningGenerator.tier1.lvl)
+
     playerData.trianglesGenerator.tier1.hasUnlocked = dataToLoad.trianglesGenerator.tier1.hasUnlocked
     playerData.trianglesGenerator.tier2.hasUnlocked = dataToLoad.trianglesGenerator.tier2.hasUnlocked
     playerData.trianglesGenerator.tier3.hasUnlocked = dataToLoad.trianglesGenerator.tier3.hasUnlocked
@@ -55,9 +65,15 @@ function loadData(dataToLoad) {
 
     playerData.shop.hasUnlocked = dataToLoad.shop.hasUnlocked
     playerData.shop.showUnlock = new Decimal(dataToLoad.shop.showUnlock)
+
+    playerData.shop.items.row2.hasUnlocked = dataToLoad.shop.items.row2.hasUnlocked
+
     playerData.shop.items.row1.circle.hasBought = dataToLoad.shop.items.row1.circle.hasBought
     playerData.shop.items.row1.triangles.hasBought = dataToLoad.shop.items.row1.triangles.hasBought
     playerData.shop.items.row1.square.hasBought = dataToLoad.shop.items.row1.square.hasBought
+    playerData.shop.items.row2.thunder.hasBought = dataToLoad.shop.items.row2.thunder.hasBought
+    playerData.shop.items.row2.storm.hasBought = dataToLoad.shop.items.row2.storm.hasBought
+    playerData.shop.items.row2.diamond.hasBought = dataToLoad.shop.items.row2.diamond.hasBought
 
     console.log(dataToLoad)
     showUnlocked()
@@ -126,6 +142,17 @@ function showUnlocked() {
         document.getElementById("t4-triangle-unlock").style.display = "none"
         document.getElementById("tri-gen-t4").style.display = "grid"
     }
+    updateShopItemCost(1, "circle")
+    updateShopItemCost(1, "triangles")
+    updateShopItemCost(1, "square")
+    updateShopItemCost(2, "thunder")
+    updateShopItemCost(2, "diamond")
+    updateShopItemCost(2, "storm")
+    if (playerData.shop.items.row2.hasUnlocked === true) {
+        document.getElementById("unlock-shop-items-div-1").style.display = "none"
+        document.getElementById("shop-items-2").style.display = "grid"
+        document.getElementById("shop-line-1").style.display = "block"
+    }
     if (playerData.shop.items.row1.circle.hasBought === true) {
         document.getElementById("circle-buy-btn").classList.add("btn-already-bought")
         document.getElementById("circle-buy-btn-txt").innerHTML = "BOUGHT"
@@ -143,5 +170,26 @@ function showUnlocked() {
         document.getElementById("square-buy-btn-txt").innerHTML = "BOUGHT"
         document.getElementById("square-buy-btn").classList.remove("btn-can-afford")
         document.getElementById("square-buy-btn").classList.remove("btn-cant-afford")
+    }
+    if (playerData.shop.items.row2.thunder.hasBought === true) {
+        document.getElementById("thunder-buy-btn").classList.add("btn-already-bought")
+        document.getElementById("thunder-buy-btn-txt").innerHTML = "BOUGHT"
+        document.getElementById("thunder-buy-btn").classList.remove("btn-can-afford")
+        document.getElementById("thunder-buy-btn").classList.remove("btn-cant-afford")
+    }
+    if (playerData.shop.items.row2.storm.hasBought === true) {
+        document.getElementById("storm-buy-btn").classList.add("btn-already-bought")
+        document.getElementById("storm-buy-btn-txt").innerHTML = "BOUGHT"
+        document.getElementById("storm-buy-btn").classList.remove("btn-can-afford")
+        document.getElementById("storm-buy-btn").classList.remove("btn-cant-afford")
+
+        document.getElementById("lightning-gen-t1-container").style.display = "block"
+        document.getElementById("l1-line").style.display = "block"
+    }
+    if (playerData.shop.items.row2.diamond.hasBought === true) {
+        document.getElementById("diamond-buy-btn").classList.add("btn-already-bought")
+        document.getElementById("diamond-buy-btn-txt").innerHTML = "BOUGHT"
+        document.getElementById("diamond-buy-btn").classList.remove("btn-can-afford")
+        document.getElementById("diamond-buy-btn").classList.remove("btn-cant-afford")
     }
 }

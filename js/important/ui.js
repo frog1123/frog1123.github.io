@@ -2,7 +2,10 @@ function updateUI() {
     document.getElementById("triangles-amount-txt").innerHTML = formatValue(playerData.trianglesAmount)
     document.getElementById("triangle-gaining-txt").innerHTML = formatValue(playerData.trianglesGenerator.tier1.lvl.mul(playerData.trianglesGenerator.tier1.multiplier))
 
+    unlockLightning()
     updateLightning()
+    updateLightningGenerator(1)
+
     updateTriangleGenerator(1)
     updateTriangleGenerator(2)
     updateTriangleGenerator(3)
@@ -20,7 +23,14 @@ function updateUI() {
     showTriangleUnlockButton(7)
 
     showShopUnlock()
-    updateShopButtons()
+    updateShopUnlock()
+    updateShopButton(1, "circle")
+    updateShopButton(1, "triangles")
+    updateShopButton(1, "square")
+    updateShopButton(2, "thunder")
+    updateShopButton(2, "storm")
+    updateShopButton(2, "diamond")
+    updateShopUnlockButton(2)
 }
 document.getElementById("save-data-btn").onclick = function() {
     saveData()

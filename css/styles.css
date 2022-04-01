@@ -13,6 +13,9 @@ h1, h2, h3 {
   justify-self: center;
   background-color: #4f5054;
 }
+button {
+  cursor: pointer;
+}
 .btn-can-afford {
   border-color: #127a20;
 }
@@ -24,6 +27,19 @@ h1, h2, h3 {
 }
 .btn-cant-afford:hover {
   background-color: #b84b5f !important;
+}
+.btn-already-bought {
+  border-color: #898989;
+  background-color: #333333;
+}
+.btn-already-bought:hover {
+  background-color: #212121 !important;
+}
+.btn-lightning-can-afford {
+  border-color: #008eb3;
+}
+.btn-lightning-can-afford:hover {
+  background-color: #6fd8f2
 }
 #tab-container {
   display: grid;
@@ -55,12 +71,8 @@ h1, h2, h3 {
 .triangle-icon {
   content: url("../assets/svg/triangle.svg");
 }
-.btn-already-bought {
-  border-color: #898989;
-  background-color: #333333;
-}
-.btn-already-bought:hover {
-  background-color: #212121 !important;
+.lightning-icon {
+  content: url("../assets//svg/lightning.svg");
 }
 .shop-container {
   width: 100%;
