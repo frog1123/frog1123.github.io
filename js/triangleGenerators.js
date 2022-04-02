@@ -21,10 +21,10 @@ function updateLightningGenerator(tier) {
         document.getElementById(`lightning-gen-t${tier}-buy-btn-txt`).innerHTML = formatValue(playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].cost)
         if (playerData.trianglesGenerator.lightning.lightningAmount.sub(playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].cost) >= 0) {
             document.getElementById(`lightning-gen-t${tier}-buy-btn`).classList.add("btn-lightning-can-afford")
-            document.getElementById(`lightning-gen-t${tier}-buy-btn`).classList.remove("btn-cant-afford")
+            document.getElementById(`lightning-gen-t${tier}-buy-btn`).classList.remove("btn-special-cant-afford")
         }
         else {
-            document.getElementById(`lightning-gen-t${tier}-buy-btn`).classList.add("btn-cant-afford")
+            document.getElementById(`lightning-gen-t${tier}-buy-btn`).classList.add("btn-special-cant-afford")
             document.getElementById(`lightning-gen-t${tier}-buy-btn`).classList.remove("btn-lightning-can-afford")
         }
     }
@@ -68,6 +68,7 @@ function buyLightning() {
 }
 function upgradeLightningGenerator(tier) {
     if (playerData.trianglesGenerator.lightning.lightningAmount.sub(playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].cost) >= 0) {
+        playerData.trianglesGenerator.lightning.lightningAmount = playerData.trianglesGenerator.lightning.lightningAmount.sub(playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].cost)
         playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].lvl = playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].lvl.add("1")
         playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].cost = playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].cost.add(playerData.trianglesGenerator.lightning.lightningGenerator[`tier${tier}`].costIncrease)
     }

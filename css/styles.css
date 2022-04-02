@@ -35,11 +35,14 @@ button {
 .btn-already-bought:hover {
   background-color: #212121 !important;
 }
-.btn-lightning-can-afford {
-  border-color: #008eb3;
-}
 .btn-lightning-can-afford:hover {
   background-color: #6fd8f2
+}
+.btn-special-cant-afford {
+  background-color: #4c4c4c;
+}
+.btn-special-cant-afford:hover {
+  background-color: #333333;
 }
 #tab-container {
   display: grid;
